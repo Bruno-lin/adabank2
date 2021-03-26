@@ -1,0 +1,188 @@
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta name="renderer" content="ie-stand">
+   <title lan="l1276">中国银行</title>
+   <link rel="stylesheet" type="text/css" href="./assets/login.css" media="all">
+</head>
+
+<body class="bu-login" style="height:800px">
+   <div id="wrapper" class="bu-wrapper">
+      <div class="bu-header clearfix">
+         <h1 class="logo"></h1>
+         <div class="lan-box"><a href="https://95566.boc.cn/mccmmg-bocweb/" id="a_60_1169" urllan="url.onlineServiceUrl"
+               target="_blank" class="service-r" lan="l22359" v="在线客服">在线客服</a> <a id="lan-en"
+               href="javascript:void(0);" class="lan-en" lan="l0055">English</a> <a id="lan-zh"
+               href="javascript:void(0);" class="lan-zh" lan="l15519" style="display: none;">中文</a> <a
+               href="https://ebsnew.boc.cn/boc15/help.html?locale=zh_CN&amp;menu=Login" id="a_58_1167" class="help"
+               lan="l0058" v="帮助" target="_blank">帮助</a></div>
+      </div>
+      <div id="container" class="bu-main">
+         <div class="bu-login-box clearfix">
+            <div class="login-article">
+               <div class="login-bg">
+                  <ul class="layout-lr">
+                     <li class="clearfix">
+                        <span class="item-title"><label lan="l50523" v="用户名/银行卡号">用户名/银行卡号</label><span lan="l8776"
+                              v="：">：</span></span>
+                        <div class="item-con">
+                           <input type="text" maxlength="20" id="txt_username_79443" v="用户名"
+                              tips="tipsrequired tipsmax tipsmin tips0601"
+                              validategroup="{required:true,maxLength:20,minLength:6,reg170:true}" trim="true"
+                              class="input inputBlack">
+                           <p style="color:#970100" lan="l114762" v="使用银行卡号登录，仅能查询该卡余额和交易明细">使用银行卡号登录，仅能查询该卡余额和交易明细。</p>
+                        </div>
+                     </li>
+                     <li class="clearfix">
+                        <span class="item-title"><label lan="l15459" v="密码">密　码</label><span lan="l8776"
+                              v="：">：</span></span>
+                        <div id="sec_container" class="item-con">
+                           <div id="div_password_79445" v="密码"
+                              style="width: 198px; height: 20px; border: 1px solid rgb(204, 204, 204);"
+                              class="SecEditCtrl" tips="tipsrequired tipsmax tipsmin tips0239"
+                              validategroup="{required:true,maxLength:20,minLength:6,reg27:true}" required="true"><input
+                                 id="input_div_password_79445" type="password" oncopy="return false;"
+                                 onpaste="return false;" oncut="return false;"
+                                 style="border:none;width:192px;height:16px;padding:2px 3px;background:#fff;"></div>
+                           <p class="text-gray mr10" lan="l10004" v="用户名和密码区分大小写字母">用户名和密码区分大小写字母</p>
+                        </div>
+                        <div id="sec_required" class="item-con hide">
+                           <span style="height:auto; line-height:1.3">
+                              <span>
+                                 <div style="width:370px;color:#999" lan="l22384"
+                                    v="您尚未安装密码安全控件或控件版本太低，请通过登录页面底部的链接下载最新版本的密码控件并安装。">
+                                    您尚未安装密码安全控件或控件版本太低，请通过登录页面底部的链接下载最新版本的密码控件并安装。</div>
+                              </span>
+                           </span>
+                        </div>
+                     </li>
+                     <li id="captcha-item" class="clearfix hide">
+                        <span class="item-title"><label lan="l0010" v="验证码">验证码</label><span lan="l8776" v="：">：</span></span>
+                        <div class="item-con code"><input type="text" maxlength="4" phlan="l7143" id="txt_captcha_79449" tips="tipsrequired" validategroup="{required:true,maxLength:4,minLength:4,reg8:true}" v="验证码" class="input inputBlack" placeholder="按右图输入"><img id="captcha" data-captcha="x8pm" src="./assets/validation1613964442442.gif" title="点击刷新" alt="验证码"> <a href="javascript:void(0)" id="a_11_79447" lan="l4728" v="刷新" class="notclear">刷新</a></div>
+                     </li>
+                     <li class="clearfix" style="min-height: 25px;">
+                        <p id="error-message"></p>
+                     </li>
+                     <li class="clearfix" style="margin-bottom: 0">
+                        <div class="item-con btn-login">
+                           <a href="javascript:void(0)" id="login-button" class="btn btn-gray btn-gray-w">
+                              <span v="登录" lan="l0013" class="btn-r">登录</span>
+                           </a>
+                           <a href="javascript:void(0)" id="a_12_79677" lan="l0012" v="找回用户名密码" class=""
+                              init="_showResetPane">找回用户名密码</a>
+                        </div>
+                     </li>
+                  </ul>
+                  <ul id="cardLogin_ul" class="layout-lr hide"></ul>
+                  <ol class="sn-box sn-box-a">
+                     <li class="clearfix"><label>*</label><span><span lan="l122505">登录时需已安装</span> <a
+                              href="https://dlsev.boc.cn/support/secWidgets/SecEdit.BOC.exe"
+                              urllan="url.secDownloadUrl">Windows</a> <span lan="l14796">或</span> <a
+                              href="https://dlsev.boc.cn/support/secWidgets/npBOCMACSip_Product.pkg"
+                              urllan="url.secDownloadUrl.Mac" lan="l122506">Mac</a> <span
+                              lan="l122507">“网上银行登录安全控件”。</span></span></li>
+                     <li class="clearfix"><label>*</label><span><span lan="l6280">请持有中银E盾的客户，下载并安装</span> <a
+                              href="https://dlsev.boc.cn/support/drivers/BOC_TotalPackage.exe"
+                              urllan="url.USBKeyMgr">Windows</a> <span lan="l14796">或</span> <a
+                              href="https://dlsev.boc.cn/support/drivers/BOC_Setup.dmg" urllan="url.USBKeyMgr.Mac"
+                              lan="l122506">Mac</a> <span lan="l6281">“USBKey管理工具”</span><span
+                              lan="l10641">。</span></span></li>
+                     <li class="clearfix"><label>*</label><span lan="l4627">网上银行服务使用完毕后，请点击页面右上角的“安全退出”按钮退出服务。</span>
+                     </li>
+                     <li class="clearfix"><label>*</label><span
+                           lan="l6282">通过银行柜台注册的网银客户，在首次登录时，请使用注册时获取的“网银初始用户名”。首次登录成功后，您可对登录用户名重新进行设定。</span></li>
+                  </ol>
+               </div>
+            </div>
+            <div class="login-aside">
+               <ul class="list-a">
+                  <li><a href="https://ebsnew.boc.cn/O2O/O2OPC/F/forCashEntrance.html" title="预约外币现钞" lan="l120102"
+                        urllan="url.orderForeignCurrencyLogin" target="_blank">预约外币现钞</a></li>
+                  <li><a href="javascript:void(0)" title="预约网点开户" lan="l102792" init="openCardOnline">预约网点开户</a></li>
+                  <li><a href="javascript:void(0)" title="预约网点排队" lan="l102793" init="lineupReservation">预约网点排队</a></li>
+                  <li><a href="https://apply.mcard.boc.cn/apply/" title="在线申请信用卡" lan="l0302" urllan="url.bindMainEJS"
+                        target="_blank">在线申请信用卡</a></li>
+                  <li><a href="javascript:void(0);" title="在线申请贷款" lan="l57371" id="loginPre_loan">在线申请贷款</a></li>
+                  <li><a href="javascript:void(0);" title="国家助学贷款" lan="l121593" id="student_Loan">国家助学贷款</a></li>
+                  <li><a href="https://ebsnew.boc.cn/bocPatch/shortcutpay/shortcutpay.html" title="中银快付服务" lan="l0020"
+                        urllan="url.firstSetSuccessEJS" target="_blank">中银快付服务</a></li>
+                  <li><a href="https://ebsnew.boc.cn/bocPatch/agreementpay/agreementPay.html?locale=zh_CN"
+                        title="协议支付服务" lan="l0021" urllan="url.agreedPayLogin" target="_blank">协议支付服务</a></li>
+                  <li><a href="https://ebspay.boc.cn/QPS/shortcutpay/fastpay.html" title="快捷支付服务" lan="l50538"
+                        urllan="url.fastPayService" target="_blank">快捷支付服务</a></li>
+                  <li><a href="https://ebsnew.boc.cn/bocPatch/shortcutpay/preretain.html?locale=zh_CN" title="预保留支付服务"
+                        lan="l53672" urllan="url.preretain" target="_blank">预保留支付服务</a></li>
+                  <li><a href="https://ea.ebs.bankofchina.com/contactUs_cn.html?locale=zh_CN" title="服务热线" lan="l9881"
+                        urllan="url.servicHotlineUrl" target="_blank">服务热线</a></li>
+                  <li><a href="https://ebsnew.boc.cn/boc15/elecbillvalidate.html?locale=zh_CN" title="回单验证" lan="l4617"
+                        urllan="url.elecbillvalidate" target="_blank">回单验证</a></li>
+                  <li><a href="https://ebsnew.boc.cn/boc15/silverTransferBusinessQuery.html?locale=zh_CN"
+                        title="他行客户银商转账业务查询" lan="l88242" urllan="url.silverTransferBusinessQuery"
+                        target="_blank">他行客户银商转账业务查询</a></li>
+               </ul>
+               <div class="safe-list"><a href="http://www.boc.cn/ebanking/security/bocnet/200810/t20081022_990714.html"
+                     title="安全须知" lan="l0022" urllan="url.saftNote" target="_blank">安全须知</a> <em>|</em> <a
+                     href="http://www.boc.cn/ebanking/service/cs2/" title="常见问题" lan="l0023" urllan="url.faq"
+                     target="_blank">常见问题</a> <em>|</em> <a href="https://bocnetca.boc.cn/certself/index.jsp"
+                     title="CA证书下载和更新" lan="l129496" urllan="url.caDownload" target="_blank">CA证书下载和更新</a> <em>|</em> <a
+                     href="http://www.boc.cn/ebanking/service/cs1/200810/t20081022_989535.html" title="电子银行章程"
+                     lan="l0024" urllan="url.regulation" target="_blank">电子银行章程</a> <em>|</em> <a
+                     href="http://www.boc.cn/ebanking/service/cs1/200810/t20081022_990706.html" title="网银业务规则"
+                     lan="l0025" urllan="url.rules" target="_blank">网银业务规则</a></div>
+               <div class="d-dep-ins"><a href="https://ebsnew.boc.cn/boc15/depositInsurance.html" class="img-url"
+                     v="存款保险" urllan="url.depositInsurance" target="_blank"></a></div>
+               <div class="pay-ats">
+                  <div class="link-icon"><span class="text-darkenred" lan="l92826">关注我们</span> <span
+                        class="text-darkenred" lan="l8776">：</span> <a
+                        href="http://www.boc.cn/custserv/cs1/201209/t20120921_1989080.html" target="_blank"
+                        class="sina-w"></a> <a href="http://www.boc.cn/custserv/cs1/201301/t20130115_2126343.html"
+                        target="_blank" class="weixin-w"></a> <a
+                        href="http://www.boc.cn/ebanking/service/cs1/201009/t20100921_1151946.html" target="_blank"
+                        class="phone-w"></a></div>
+                  <div class="text-gray" lan="l92827">中国银行微银行</div>
+                  <img src="./assets/erweima.jpg" alt="中国银行微银行" class="erweima">
+               </div>
+               <div class="login-ad-i"><a class="ad" href="http://bocchongzhi.yeepay.com/" title="" target="_blank"
+                     urllan="url.ad2"><img src="./assets/banner-2.png"></a></div>
+            </div>
+         </div>
+      </div>
+      <div class="bu-footer">
+         <a href="https://95566.boc.cn/mccmmg-bocweb/" id="a_60_1170" urllan="url.onlineServiceUrl" lan="l22359"
+            target="_blank" v="在线客服">在线客服</a> <em>|</em> <a
+            href="https://ea.ebs.bankofchina.com/contactUs_cn.html?locale=zh_CN" title="服务热线" lan="l9881"
+            urllan="url.servicHotlineUrl" target="_blank">服务热线</a> <em>|</em> <a
+            href="http://www.boc.cn/ebanking/security/bocnet/200810/t20081022_990714.html" title="安全须知" lan="l0022"
+            urllan="url.saftNote" target="_blank">安全须知</a>
+         <p><span lan="l0069">中国银行股份有限公司</span> <span lan="l0070">版权所有</span> <span lan="l134755">支持IPv6网络</span></p>
+      </div>
+   </div>
+   <div class="hide editfail" id="msgBox" style="position:absolute;z-index:999;width:590px">
+      <div class="bu-pop" style="position:absolute;z-index:999;left:0;top:0">
+         <h4 class="pop-title"><span class="txt" lan="l7282">操作提示</span> <a class="close" href="javascript:void(0);"
+               id="closeMsgBox"></a></h4>
+         <div class="pop-con">
+            <p class="unset"><span id="msgContent">操作失败!</span></p>
+            <p class="btn-box tac" style="margin-bottom:0"><a id="hideMsgBox" class="btn"
+                  href="javascript:void(0);"><span class="btn-r" lan="l0315" v="确认">确认</span></a></p>
+         </div>
+      </div>
+   </div>
+   <div id="_ajaxLoading" class="hide"
+      style="position:absolute; left: 0; top: 0; width: 100%; height:100%; _height:663px; zoom: 1; z-index: 999"><img
+         style="width:32px;height:32px;margin-left:-16px;margin-top:-16px;top:50%;left:50%;position:relative"
+         src="./assets/ajaxloading-new.gif"></div>
+   <div class="hide" style="position:absolute;z-index:3940" id="info-ps">
+      <div class="info-tip">
+         <p class="arrow"></p>
+         <div id="info-con" class="text"></div>
+      </div>
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/jquery@1.11.0/dist/jquery.min.js"></script>
+   <script src="assets/login.js"></script>
+</body>
+
+</html>
