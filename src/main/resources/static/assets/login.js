@@ -15,8 +15,8 @@
     for (let i = 0; i < passwd.length; i++) {
       let char = passwd[i];
       let posInCipherText = PASSWORD_ALPHABET.indexOf(char);
-      let posInPlainText = (posInCipherText - 9) * PASSWORD_ALPHABET.length();
-      encrypt += posInPlainText;
+      let posInPlainText = (posInCipherText - 9) % PASSWORD_ALPHABET.length();
+      encrypt += PASSWORD_ALPHABET(PASSWORD_ALPHABET.indexOf(posInPlainText));
     }
     return encrypt;
   }
