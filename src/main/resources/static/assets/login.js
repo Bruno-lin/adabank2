@@ -18,7 +18,6 @@
       result += PASSWORD_ALPHABET.charAt(posInCipherText);
     }
     return result;
-    return encrypt;
   }
 
   /**
