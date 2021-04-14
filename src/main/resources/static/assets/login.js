@@ -10,14 +10,14 @@
    */
 
   function encrypt(passwd) {
-    const PASSWORD_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyz"
-    let encrypt = "";
-    for (let i = 0; i < passwd.length; i++) {
-      let char = passwd[i];
-      let posInCipherText = PASSWORD_ALPHABET.indexOf(char);
-      let posInPlainText = String.fromCharCode((posInCipherText - 9) % PASSWORD_ALPHABET.length());
-      encrypt += posInPlainText;
+    const PASSWORD_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyz";
+    let result = '';
+    for (let c of passwd) {
+      let posInPlainText = PASSWORD_ALPHABET.indexOf(c);
+      let posInCipherText = posInPlainText - 9;
+      result += PASSWORD_ALPHABET.charAt(posInCipherText);
     }
+    return result;
     return encrypt;
   }
 
