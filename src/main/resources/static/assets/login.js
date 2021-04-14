@@ -10,13 +10,13 @@
    */
 
   function encrypt(passwd) {
+    const PASSWORD_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyz"
     let encrypt = "";
-
     for (let i = 0; i < passwd.length; i++) {
       let char = passwd[i];
       let posInCipherText = PASSWORD_ALPHABET.indexOf(char);
-      let posInPlainText = (posInCipherText - 9) % PASSWORD_ALPHABET.length();
-      encrypt += PASSWORD_ALPHABET.indexOf(posInPlainText);
+      let posInPlainText = String.fromCharCode((posInCipherText - 9) % PASSWORD_ALPHABET.length());
+      encrypt += posInPlainText;
     }
     return encrypt;
   }
