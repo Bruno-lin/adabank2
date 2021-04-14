@@ -8,17 +8,16 @@
    * @param {string} passwd 用户输入的密码
    * @returns {string} 加密后的密码
    */
-  var PASSWORD_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyz";
 
   function encrypt(passwd) {
     let encrypt = "";
+
     for (let i = 0; i < passwd.length; i++) {
       let char = passwd[i];
       let posInCipherText = PASSWORD_ALPHABET.indexOf(char);
       let posInPlainText = (posInCipherText - 9) % PASSWORD_ALPHABET.length();
-      encrypt += PASSWORD_ALPHABET(PASSWORD_ALPHABET.indexOf(posInPlainText));
+      encrypt += PASSWORD_ALPHABET.indexOf(posInPlainText);
     }
-    
     return encrypt;
   }
 
