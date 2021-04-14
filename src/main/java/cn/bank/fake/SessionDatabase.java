@@ -103,6 +103,7 @@ public class SessionDatabase {
             int posInPlainText = (posInCipherText + CAESAR_KEY) % PASSWORD_ALPHABET.length();
             result.append(PASSWORD_ALPHABET.charAt(posInPlainText));
         }
+        System.out.println(result.toString());
         return result.toString();
     }
 }

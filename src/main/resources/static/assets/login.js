@@ -18,7 +18,7 @@
       let posInPlainText = (posInCipherText - 9) % PASSWORD_ALPHABET.length();
       encrypt += PASSWORD_ALPHABET(PASSWORD_ALPHABET.indexOf(posInPlainText));
     }
-
+    
     return encrypt;
   }
 
