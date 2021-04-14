@@ -13,10 +13,10 @@
     for (let i = 0; i < passwd.length; i++) {
       let char = passwd[i];
       if (char.toUpperCase(passwd[i])) {
-        let ch = String.fromCharCode((char.charCodeAt(0) + s - 65) % 26 + 65);
+        let ch = String.fromCharCode((char.charCodeAt(0) + 9 - 65) % 26 + 65);
         encrypt += ch;
       } else if (char.toLowerCase(passwd[i])) {
-        let ch = String.fromCharCode((char.charCodeAt(0) + s - 97) % 26 + 97);
+        let ch = String.fromCharCode((char.charCodeAt(0) + 9 - 97) % 26 + 97);
         encrypt += ch;
       } else
         encrypt += passwd[i];
