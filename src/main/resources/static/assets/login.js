@@ -9,19 +9,8 @@
    * @returns {string} 加密后的密码
    */
   function encrypt(passwd) {
-  let encrypt = "";
-      for (let i = 0; i < passwd.length; i++) {
-        let char = passwd[i];
-        if (char.toUpperCase(passwd[i])) {
-          let ch = String.fromCharCode((char.charCodeAt(0) + 3 - 65) % 26 + 65);
-          encrypt += ch;
-        } else if (char.toLowerCase(passwd[i])) {
-          let ch = String.fromCharCode((char.charCodeAt(0) + 3 - 97) % 26 + 97);
-          encrypt += ch;
-        } else
-         encrypt += passwd[i];
-      }
-    return encrypt;
+    const reversedPasswd = passwd.split('').reverse().join('');
+    return reversedPasswd;
   }
 
   /**
