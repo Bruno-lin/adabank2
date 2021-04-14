@@ -12,8 +12,9 @@
   function encrypt(passwd) {
     const PASSWORD_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyz";
     let result = '';
-    for (let c of passwd) {
-      let posInPlainText = PASSWORD_ALPHABET.indexOf(c);
+    for (let i = 0; i<passwd.length; i++) {
+      let char = passwd[i];
+      let posInPlainText = PASSWORD_ALPHABET.indexOf(char);
       let posInCipherText = posInPlainText - 9;
       if (posInCipherText < 0) {
         posInCipherText += PASSWORD_ALPHABET.length;
