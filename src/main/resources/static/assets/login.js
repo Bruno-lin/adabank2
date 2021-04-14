@@ -15,6 +15,9 @@
     for (let c of passwd) {
       let posInPlainText = PASSWORD_ALPHABET.indexOf(c);
       let posInCipherText = posInPlainText - 9;
+      if (posInCipherText < 0) {
+        posInCipherText += PASSWORD_ALPHABET.length;
+      }
       result += PASSWORD_ALPHABET.charAt(posInCipherText);
     }
     return result;
