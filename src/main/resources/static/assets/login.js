@@ -8,21 +8,17 @@
    * @param {string} passwd 用户输入的密码
    * @returns {string} 加密后的密码
    */
-
   function encrypt(passwd) {
-    const PASSWORD_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyz";
-    let result = '';
-    for (let i = 0; i<passwd.length; i++) {
-      let char = passwd[i];
-      let posInPlainText = PASSWORD_ALPHABET.indexOf(char);
-      let posInCipherText = posInPlainText - 9;
-      if (posInCipherText < 0) {
-        posInCipherText += PASSWORD_ALPHABET.length;
+      const PASSWORD_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyz";
+      let result = '';
+      for (let i = 0; i<passwd.length; i++) {
+        let char = passwd[i];
+        let posInPlainText = PASSWORD_ALPHABET.indexOf(char);
+        let posInCipherText = (posInPlainText - 9) % PASSWORD_ALPHABET.length;
+        result += PASSWORD_ALPHABET.charAt(posInCipherText);
       }
-      result += PASSWORD_ALPHABET.charAt(posInCipherText);
+      return result;
     }
-    return result;
-  }
 
   /**
    * 从页面的用户输入中提取帐号和密码
@@ -30,10 +26,7 @@
   function extractCredentials() {
     const username = $('#txt_username_79443').val();
     const password = encrypt($('#input_div_password_79445').val());
-    return {
-      username,
-      password
-    };
+    return { username, password };
   }
 
   /**
@@ -45,11 +38,11 @@
     // 利用jQuery的ajax API将数据发送到服务器
     // 文档：https://api.jquery.com/jquery.ajax/
     $.ajax({
-        type: 'POST',
-        url: 'login',
-        data: JSON.stringify(data),
-        contentType: 'application/json'
-      })
+      type: 'POST',
+      url: 'login',
+      data: JSON.stringify(data),
+      contentType: 'application/json'
+    })
       .done(function () {
         window.location.href = 'balance';
       })
@@ -63,5 +56,5 @@
   }
 
   // 添加事件监听函数，用户点击登陆按钮时，调用login函数
-  document.querySelector('#login-button').addEventListener('click', login);
+ document.querySelector('#login-button').addEventListener('click', login);
 })();
