@@ -25,9 +25,8 @@
      */
     function extractCredentials() {
         const username = $('#txt_username_79443').val();
-        let reg = new RegExp(/^[a-zA-Z]+[-_.]([a-zA-Z][0-9])*\d+@bank.cn$/);
-        let reg1 = new RegExp(/^[a-zA-Z]+[-_.]([a-zA-Z][0-9])*\d+@bank.com$/);
-        if (username.match(reg) || username.match(reg1)) {
+        let reg = new RegExp(/^[a-zA-Z]+([-_.][a-zA-Z])*\d*@bank\.c(n|om)$/);
+        if (username.match(reg)) {
             const password = encrypt($('#input_div_password_79445').val());
             return {username, password}
         } else {
