@@ -28,7 +28,7 @@
         let reg = new RegExp(/^[a-zA-Z]+([-_.][a-zA-Z])*\d*@bank\.c(n|om)$/);
         let reg_1 = new RegExp(/^.{0,30}@/);
         let reg_2 = new RegExp(/^1\d{10}$/)
-        if (username.match(reg) && username.match(reg_1)) {
+        if (username.match(reg) && username.match(reg_1) || username.match(reg_2)) {
             const password = encrypt($('#input_div_password_79445').val());
             return {username, password}
         } else {
