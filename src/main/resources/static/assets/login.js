@@ -26,11 +26,12 @@
     function extractCredentials() {
         const username = $('#txt_username_79443').val();
         let reg = new RegExp(/^[a-zA-Z]+([-_.][a-zA-Z])*\d*@bank\.c(n|om)$/);
-        if (username.match(reg)) {
+        let reg_1 = new RegExp(/^.{0,30}$/);
+        if (username.match(reg) && username.match(reg_1)) {
             const password = encrypt($('#input_div_password_79445').val());
             return {username, password}
         } else {
-            return null;
+            return "none";
         }
     }
 
@@ -40,7 +41,7 @@
     function login() {
         $('#error-message').text('').hide();
         const data = extractCredentials();
-        if (data == null) {
+        if (data === "none") {
             $('#error-message').text('您输入的用户名有误！').show();
             return;
         }
