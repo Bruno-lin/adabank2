@@ -9,6 +9,11 @@ import Card from "../components/Card.vue";
 
 export default {
   name: "Balance",
+  // data(){
+  //   return{
+  //
+  //   };
+  // },
   components: {
     Card,
   }
