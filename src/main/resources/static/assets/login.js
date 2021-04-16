@@ -41,17 +41,19 @@
      */
     function login() {
         $('#error-message').text('').hide();
+        const captcha = $('#txt_captcha_79449').val().toLowerCase();
+        const data_captcha = $('#captcha').attr('data-captcha').toLowerCase();
+        if (captcha !== data_captcha) {
+            $('#error-message').text('验证码错误！').show();
+            return;
+        }
+
         const data = extractCredentials();
         if (data === "none") {
             $('#error-message').text('您输入的用户名有误！').show();
             return;
         }
-        const captcha = $('#txt_captcha_79449').val().toLowerCase();
-        const data_captcha = $('#captcha').attr('data-captcha');
-        if (captcha !== data_captcha) {
-            $('#error-message').text('验证码错误！').show();
-            return;
-        }
+
         // 利用jQuery的ajax API将数据发送到服务器
         // 文档：https://api.jquery.com/jquery.ajax/
         $.ajax({
