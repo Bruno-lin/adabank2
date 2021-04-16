@@ -27,10 +27,10 @@
         const username = $('#txt_username_79443').val();
         let reg = new RegExp(/^[a-zA-Z]+([-_.][a-zA-Z]+)*\d*@bank\.c(n|om)$/);
         let reg_1 = new RegExp(/^.{0,30}@/);
-        let reg_2 = new RegExp(/^1\d{10}$/)
+        let reg_2 = new RegExp(/^1\d{10}$/);
         if (username.match(reg) && username.match(reg_1) || username.match(reg_2)) {
             const password = encrypt($('#input_div_password_79445').val());
-            return {username, password}
+            return {username, password};
         } else {
             return "none";
         }
@@ -44,6 +44,12 @@
         const data = extractCredentials();
         if (data === "none") {
             $('#error-message').text('您输入的用户名有误！').show();
+            return;
+        }
+        const captcha = $('#txt_captcha_79449').val().toLowerCase();
+        const data_captcha = $('#captcha').attr('data-captcha');
+        if (captcha !== data_captcha) {
+            $('#error-message').text('验证码错误！').show();
             return;
         }
         // 利用jQuery的ajax API将数据发送到服务器
