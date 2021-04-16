@@ -10,7 +10,11 @@ export default new Router({
             path: '/login',
             name: 'Login',
             component: Login,   // `/login`路径访问Login组件
-        }, {
+        },{
+            path: '/Balance',
+            name: 'Balance',
+            component: Balance,   // `/login`路径访问Login组件
+        },{
             path: '*',
             redirect: '/login'  // 所有路径都重定向到`/login`
         }

@@ -1,4 +1,4 @@
-<template>
+  <template>
   <Card v-bind:image="require('../assets/bank.png')">
     <input type="text" placeholder="用户名" v-model="username" />
     <input type="password" placeholder="密码" v-model="password" />
