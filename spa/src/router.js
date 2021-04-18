@@ -4,8 +4,7 @@ import Login from './views/Login.vue'
 import Balance from "./views/Balance";
 
 Vue.use(Router)
-
-export default new Router({
+const router = new Router({
     routes: [
         {
             path: '/login',
@@ -21,3 +20,8 @@ export default new Router({
         }
     ]
 });
+router.beforeEach((to, from, next) => {
+    if (to.name !== 'Login' && document.cookie ==="") next({ name: 'Login' })
+    else next()
+})
+export default router;
